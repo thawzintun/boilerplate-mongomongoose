@@ -21,9 +21,7 @@ const createAndSavePerson = (done) => {
             favoriteFoods: ["Apple", "Orange", "Grape"],
         },
         (err, person) => {
-            if (err) {
-                return console.log(err);
-            }
+            if (err) return console.error(err);
             done(null, person);
         }
     );
@@ -49,9 +47,7 @@ var arrayOfPeople = [
 
 const createManyPeople = (arrayOfPeople, done) => {
     Person.create(arrayOfPeople, (err, people) => {
-        if (err) {
-            return console.log(err);
-        }
+        if (err) return console.error(err);
         done(null, people);
     });
 };
